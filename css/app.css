@@ -1,0 +1,91 @@
+#left {
+    position: relative;
+    margin-left: -40px;
+    z-index: 1;
+}
+#last {
+    position: relative;
+    z-index: 7;
+    margin-top: -358px;
+    margin-left: -199px;
+}
+#rightEye {
+    position: relative;
+    z-index: 8;
+    margin-top: -218px;
+    margin-left: -119px;
+}
+canvas {
+    border: 0px solid white;
+}
+#first {
+    position: absolute;
+    z-index: 4;
+    margin-top: -340px;
+    margin-left: -120px;
+}
+.right {
+    position: absolute;
+    margin-top: -339px;
+    margin-left: 240px;
+    background-color: white;
+    z-index: 2;
+    height: 400px;
+    width: 121px;
+}
+.overlay {
+    position: absolute;
+    margin-top: -339px;
+    margin-left: -14px;
+    background-color: white;
+    z-index: 3;
+    height: 400px;
+    width: 130px;
+}
+.upperOverlay {
+    position: absolute;
+    margin-top: -405px;
+    margin-left: -14px;
+    background-color: white;
+    z-index: 5;
+    height: 83px;
+    width: 375px;
+}
+.lowerOverlay {
+    position: absolute;
+    margin-top: -115px;
+    margin-left: -14px;
+    background-color: white;
+    z-index: 6;
+    height: 200px;
+    width: 375px;
+}
+#cropFaceLeft {
+    position: relative;
+    z-index: 9;
+    margin-top: -148px;
+    margin-left: -28px;
+    height: 200px;
+    width: 75px;
+    background-color: white;
+}
+#cropHeadTop {
+    position: relative;
+    z-index: 10;
+    margin-top: -228px;
+    margin-left: -28px;
+    height: 40px;
+    width: 268px;
+    background-color: white;
+
+}
+.cropJawBottom {
+    position: absolute;
+    z-index: 11;
+    margin-top: 159px;
+    margin-left: 48px;
+    height: 90px;
+    width: 192px;
+    background-color: white;
+
+}

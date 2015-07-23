@@ -1,0 +1,144 @@
+// ----
+// Sass (v3.3.8)
+--
+
+// A clean way to deal with z-index layers in Sass
+// Based on http://css-tricks.com/handling-z-index/
+// ---
+
+// A map of z layers
+// All z-index values should be set there
+
+$z-layers: (
+  'left':            1,
+  'right':           2,
+  'overlay':         3,
+  'first':           4,
+  'upperOverlay':    5,
+  'lowerOverlay':    6,
+  'last',            7,
+  'rightEye',        8,
+  'cropFaceLeft',    9,
+  'cropHeadTop' ,    10,
+  'cropJawBottom',   11,
+  'bottomless-pit': -10000
+);
+
+// A function helper to avoid having to type `map-get($z-layers, ...)`
+// ---
+// @param [string] $component: the layer to use
+// ---
+// @return [number] | [null]
+
+@function z($layer) {
+  @if not map-has-key($z-layers, $layer) {
+    @warn "No z-index found in $z-layers map for `#{$layer}`. Property omitted.";
+  }
+  
+  @return map-get($z-layers, $layer);
+}
+
+
+.im-falling {
+  z-index: z("bottomless-pit");
+}
+
+// Calling an unknown layer
+// will omit the z-index property
+.error {
+  z-index: z("unknown-z-index");
+}
+
+$white:  white;
+
+#left {
+	position: relative;
+	margin-left: -40px;
+	z-index: z("left");
+}
+#last {
+	position: relative;
+	z-index: z("last");
+	margin-top: -358px;
+	margin-left: -199px;
+}
+#rightEye {
+	position: relative;
+	z-index: z("rightEye");
+	margin-top: -218px;
+	margin-left: -119px;
+}
+canvas {
+	border: 0 solid $white;
+}
+#first {
+	position: absolute;
+	z-index:z("first") ;
+	margin-top: -340px;
+	margin-left: -120px;
+}
+.right {
+	position: absolute;
+	margin-top: -339px;
+	margin-left: 240px;
+	background-color: $white;
+	z-index: z("right");
+	height: 400px;
+	width: 121px;
+}
+.overlay {
+	position: absolute;
+	margin-top: -339px;
+	margin-left: -14px;
+	background-color: $white;
+	z-index: z("overlay");
+	height: 400px;
+	width: 130px;
+}
+.upperOverlay {
+	position: absolute;
+	margin-top: -405px;
+	margin-left: -14px;
+	background-color: $white;
+	z-index: z("upperOverlay");
+	height: 83px;
+	width: 375px;
+}
+.lowerOverlay {
+	position: absolute;
+	margin-top: -115px;
+	margin-left: -14px;
+	background-color: $white;
+	z-index: lowerOverlay;
+	height: 200px;
+	width: 375px;
+}
+#cropFaceLeft {
+    position: relative;
+    z-index: z("cropFaceLeft");
+    margin-top: -148px;
+    margin-left: -28px;
+    height: 200px;
+    width: 75px;
+    background-color: $white;
+}
+#cropHeadTop {
+    position: relative;
+    z-index: z("cropHeadTop");
+    margin-top: -228px;
+    margin-left: -28px;
+    height: 40px;
+    width: 268px;
+    background-color: $white;
+
+}
+.cropJawBottom {
+    position: absolute;
+    z-index: z("cropJawBottom");
+    margin-top: 159px;
+    margin-left: 48px;
+    height: 90px;
+    width: 192px;
+    background-color: $white;
+
+}
